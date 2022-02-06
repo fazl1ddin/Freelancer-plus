@@ -1,0 +1,613 @@
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@700&family=PT+Sans+Narrow&family=Readex+Pro&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+}
+.window {
+    max-width: 1280px;
+    position: relative;
+    margin: 0 auto;
+}
+.window .upTo {
+    position: fixed;
+    top: 85%;
+    right: 40px;
+    z-index: 100;
+    cursor: pointer;
+    padding: 20px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 1);
+    transition: all 0.5s ease-in-out;
+    width: 50px;
+    height: 50px;
+    display: none;
+}
+.window .upTo:hover {
+    background-color: rgba(255, 255, 255, 0.6);
+}
+.window .upTo.block {
+    display: block;
+}
+.nav {
+    padding-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    height: 75px;
+}
+.nav .navbar {
+    display: flex;
+    justify-content: space-around;
+}
+.nav .navbar ul {
+    display: flex;
+    justify-content: space-around;
+    width: 600px;
+}
+.nav .navbar ul li {
+    list-style-type: none;
+}
+.nav .navbar ul li a {
+    text-decoration: none;
+    color: rgb(32, 32, 32);
+    text-align: center;
+    line-height: 75px;
+    font-family: -apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+    font-weight: 700;
+    font-size: 16px;
+    position: relative;
+}
+.nav .navbar ul li a::before {
+    transition: all 0.3s ease-in-out;
+    content: "[";
+    opacity: 0;
+    position: absolute;
+}
+.nav .navbar ul li a::after {
+    transition: all 0.3s ease-in-out;
+    content: "]";
+    opacity: 0;
+    position: absolute;
+}
+.nav .navbar ul li a:hover::before {
+    opacity: 1;
+    transform: translateX(-20px);
+}
+.nav .navbar ul li a:hover::after {
+    opacity: 1;
+    transform: translateX(15px);
+}
+.nav .navbar .search img{
+    margin: 23px 0;
+    cursor: pointer;
+}
+.hdContent {
+    display: flex;
+    justify-content: space-between;
+    height: 390px;
+    padding-bottom: 30px;
+}
+.hdContent .hdContenText {
+    padding-top: 9em;
+}
+.hdContent .hdContenText h1 {
+    font-family: 'PT Sans Narrow', sans-serif;
+    color: #575757;
+    font-weight: 100;
+    letter-spacing: 2px;
+    word-spacing: 3px;
+}
+.hdContent .hdContenText p {
+    color: #8e8e8e;
+    line-height: 1.5em;
+    font-size: 0.9em;
+    letter-spacing: 0.5px;
+    word-spacing: 2px;
+    width: 70%;
+    padding-top: 1em;
+    font-family: -apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+}
+.hdContent .hdContentPic img {
+    width: 500px;
+}
+.mainLastWorks {
+    border-top: 1px solid #E0E0E0;
+}
+.mainLastWorks .title {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 20px;
+}
+.mainLastWorks .title h2 {
+    font-family: 'PT Sans Narrow', sans-serif;
+    color: #a2a3a3;
+    font-weight: 100;
+    letter-spacing: 1px;
+}
+.mainLastWorks .title .tabs ul {
+    display: flex;
+    justify-content: space-between;
+    width: 620px;
+    margin: 2px 0;
+}
+.mainLastWorks .title .tabs ul li {
+    list-style-type: none;
+    font-family: -apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+    font-weight: 700;
+    color: #279f7c;
+    border-radius: 5px;
+    font-size: 14px;
+    text-align: center;
+    padding: 3px 12px;
+    cursor: pointer;
+    transition: all 0.5s ease-out;
+}
+.mainLastWorks .title .tabs ul li:hover {
+    color: white;
+    background-color: #279f7c;
+    border-radius: 5px;
+}
+.mainLastWorks .title .tabs ul li.active {
+    color: white;
+    background-color: #279f7c;
+}
+.mainContentBox {
+    margin-top: 60px;
+}
+.allContent {
+    display: flex;
+    justify-content: left;
+    flex-wrap: wrap;
+}
+.allContent .content {
+    margin: 0 3.207%;
+    margin-bottom: 25px;
+    transition: all 0.8s;
+    position: relative;
+    height: 245px;
+    overflow: hidden;
+}
+.allContent .content.block {
+    display: block;
+}
+.allContent .content.none {
+    display: none;
+}
+.allContent .content .onAnimate {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(39, 159, 124, 0.6);
+    position: absolute;
+    top: 0;
+    text-align: center;
+    left: -100%;
+    transition: all 0.75s ease-in-out;
+}
+.allContent .content .onAnimate.animate {
+    left: 0;
+}
+.allContent .content .onAnimate h3 {
+    display: block;
+    font-size: 1.5em;
+    margin-top: 4.5em;
+    text-transform: uppercase;
+    color: rgb(29, 29, 29);
+    cursor: pointer;
+    font-family: -apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+}
+.allContent .content .onAnimate a {
+    display: inline-block;
+    text-decoration: none;
+    margin: 10px;
+    padding: 5px 15px;
+    background-color: white;
+    color: black;
+    border-radius: 15px;
+    font-size: 15px;
+    text-transform: uppercase;
+    font-family: 'PT Sans Narrow', sans-serif;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: all 0.4s ease-in;
+}
+.allContent .content .onAnimate a:hover {
+    background-color: dimgray;
+    color: white;
+}
+.mainInfo .mainInfoTitle {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 40px;
+    border-top: 1px solid #E0E0E0;
+}
+.mainInfo .mainInfoTitle h2 {
+    font-family: 'PT Sans Narrow', sans-serif;
+    color: #a2a3a3;
+    font-weight: 100;
+    letter-spacing: 1px;
+    line-height: 45px;
+    font-size: 32px;
+}
+.mainInfo .mainInfoTitle p {
+    font-family: -apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+    font-size: 12px;
+    line-height: 22.5px;
+}
+.mainInfo .mainInfoContentBox {
+    display: flex;
+    justify-content: space-around;
+}
+.mainInfo .mainInfoContentBox .mainInfoContent {
+    text-align: center;
+    padding: 4em 0;
+    width: 30%;
+}
+.mainInfo .mainInfoContentBox .mainInfoContent img {
+    padding-bottom: 15px;
+}
+.mainInfo .mainInfoContentBox .mainInfoContent h5 {
+    font-size: 16px;
+    padding-bottom: 10px;
+    font-family: -apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+}
+.mainInfo .mainInfoContentBox .mainInfoContent p {
+    font-family: -apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+    font-size: 13px;
+    width: 90%;
+    margin: 0 auto;
+    color: #8e8e8e;
+    line-height: 180%;
+    letter-spacing: 1px;
+}
+.mainTeam .mainTeamTitle {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 40px;
+    border-top: 1px solid #E0E0E0;
+}
+.mainTeam .mainTeamTitle h2 {
+    font-family: 'PT Sans Narrow', sans-serif;
+    color: #a2a3a3;
+    font-weight: 100;
+    letter-spacing: 1px;
+    line-height: 45px;
+    font-size: 32px;
+}
+.mainTeam .mainTeamTitle p {
+    font-family: -apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+    font-size: 12px;
+    line-height: 22.5px;
+}
+.mainTeam .mainTeamContentBox {
+    display: flex;
+    justify-content: space-around;
+}
+.mainTeam .mainTeamContentBox .mainTeamContent {
+    text-align: center;
+    padding: 4em 0;
+    width: 30%;
+}
+.mainTeam .mainTeamContentBox .mainTeamContent img {
+    padding-bottom: 15px;
+}
+.mainTeam .mainTeamContentBox .mainTeamContent h5 {
+    font-size: 24px;
+    color: #646363;
+    font-weight: lighter;
+    padding-bottom: 10px;
+    font-family: 'PT Sans Narrow', sans-serif;
+}
+.mainTeam .mainTeamContentBox .mainTeamContent h4 {
+    font-size: 17px;
+    color: #323232;
+    font-family: -apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+}
+.mainTeam .mainTeamContentBox .mainTeamContent p {
+    font-family: -apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+    font-size: 13px;
+    width: 90%;
+    margin: 0 auto;
+    padding: 10px 0;
+    color: #8e8e8e;
+    line-height: 140%;
+    letter-spacing: 1px;
+}
+.mainTeam .mainTeamContentBox .mainTeamContent .socials a {
+    width: 33px;
+    height: 33px;
+    background: url("img/img-sprite.png");
+    display: inline-block;
+    background-position: -6.5px -2.5px;
+    transition: all 0.4s ease-out;
+}
+.mainTeam .mainTeamContentBox .mainTeamContent .socials a:hover {
+    background-position: -6.5px -42.5px;
+}
+.mainTeam .mainTeamContentBox .mainTeamContent .socials .thumbrl {
+    width: 33px;
+    height: 33px;
+    background: url("img/img-sprite.png");
+    display: inline-block;
+    background-position: -42px -4px;
+}
+.mainTeam .mainTeamContentBox .mainTeamContent .socials .thumbrl:hover {
+    background-position: -42px -44px;
+}
+.mainTeam .mainTeamContentBox .mainTeamContent .socials .pinterest {
+    width: 33px;
+    height: 33px;
+    background: url("img/img-sprite.png");
+    display: inline-block;
+    background-position: -79.5px -4.5px;
+}
+.mainTeam .mainTeamContentBox .mainTeamContent .socials .pinterest:hover {
+    background-position: -79.5px -44.5px;
+}
+.footer {
+    background-color: #279f7c;
+}
+.footerContentBox {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 40px;
+    padding-bottom: 20px;
+}
+.footerContentBox h4 {
+    font-family: 'PT Sans Narrow', sans-serif;
+    font-size: 25px;
+    color: white;
+    font-weight: lighter;
+    letter-spacing: 1.5px;
+    word-spacing: 3px;
+}
+.footerContentBox .footerContent {
+    width: 30%;
+}
+.footerContentBox .footerContent .tweet {
+    line-height: 150%;
+    padding-top: 30px;
+}
+.footerContentBox .footerContent .tweet p {
+    color: #86e5c9;
+    font-family: -apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+}
+.footerContentBox .footerContent .tweet a {
+    color: white;
+    text-decoration: none;
+    font-size: 17px;
+    font-family: -apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+}
+.footerContentBox .footerContent .tweet .dateTweet {
+    color: #86e5c9;
+    font-size: 20px;
+    font-family: -apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+}
+.footerContentBox .footerContent ul {
+    padding-top: 30px;
+    width: 80%;
+}
+.footerContentBox .footerContent ul li {
+    width: 70px;
+    height: 70px;
+    background-color: #86e5c9;
+    list-style-type: none;
+    display: inline-block;
+    border-radius: 15px;
+    margin: 5px;
+    transition: all 0.8s ease-in-out;
+    cursor: pointer;
+}
+.footerContentBox .footerContent ul li:hover {
+    background-image: url("img/se.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: #1f6551;
+}
+.footerContentBox .footerContent form {
+    width: 100%;
+    padding-top: 30px;
+    text-align: right;
+}
+.footerContentBox .footerContent form input {
+    width: 100%;
+    height: 40px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+    border: none;
+    border-radius: 5px;
+}
+.footerContentBox .footerContent form input::placeholder {
+    padding-left: 10px;
+    font-size: 15px;
+}
+.footerContentBox .footerContent form textarea {
+    width: 100%;
+    padding: 10px;
+    line-height: 150%;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+    border: none;
+    border-radius: 5px;
+}
+.footerContentBox .footerContent form textarea::placeholder {
+    font-size: 15px;
+    font-family: sans-serif;
+}
+.footerContentBox .footerContent form button {
+    padding: 0.4em 1em;
+    box-sizing: border-box;
+    border: none;
+    border-radius: 10px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: 700;
+    font-size: 1.2em;
+    background-color: #1f6551;
+    color: white;
+    cursor: pointer;
+    transition: all 0.6s ease-out;
+}
+.footerContentBox .footerContent form button:hover {
+    background-color: #86e5c9;
+}
+.footerBottom {
+    display: flex;
+    justify-content: space-between;
+    padding: 35px 0;
+    border-top: solid white 1px;
+}
+.footerBottom .icons .twitter {
+    width: 42px;
+    height: 42px;
+    background: url("img/img-sprite.png");
+    display: inline-block;
+    background-position: -135px -3.5px;
+    transition: all 0.4s ease-out;
+}
+.footerBottom .icons .twitter:hover {
+    background-position: -135px -51.5px;
+}
+.footerBottom .icons .facebook {
+    width: 42px;
+    height: 42px;
+    background: url("img/img-sprite.png");
+    display: inline-block;
+    background-position: -186px -4px;
+    transition: all 0.4s ease-out;
+}
+.footerBottom .icons .facebook:hover {
+    background-position: -186px -52.5px;
+}
+.footerBottom .icons .html5 {
+    width: 42px;
+    height: 42px;
+    background: url("img/img-sprite.png");
+    display: inline-block;
+    background-position: -238px -4px;
+    transition: all 0.4s ease-out;
+}
+.footerBottom .icons .html5:hover {
+    background-position: -238px -52.5px;
+}
+.footerBottom .icons .flickr {
+    width: 42px;
+    height: 42px;
+    background: url("img/img-sprite.png");
+    display: inline-block;
+    background-position: -292px -5px;
+    transition: all 0.4s ease-out;
+}
+.footerBottom .icons .flickr:hover {
+    background-position: -292px -53.5px;
+}
+.footerBottom p {
+    display: inline;
+    color: white;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+.footerBottom .pshnik {
+    color: #1f6551;
+    font-weight: 700;
+    transition: all 0.5s ease-in;
+}
+.footerBottom .pshnik:hover {
+    color: white;
+}
+.mainBlogContent {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 30px 0;
+}
+.mainBlogContent .mainBlogContentBox {
+    padding: 10px 0;
+    width: 49%;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+.mainBlogContent .mainBlogContentBox .img, img {
+    width: 100%;
+    display: block;
+}
+.mainBlogContent .mainBlogContentBox p {
+    color: #8e8e8e;
+    font-size: 16px;
+    line-height: 170%;
+    margin-bottom: 6px;
+    margin-top: 10px;
+}
+.mainBlogContent .mainBlogContentBox .blogLink {
+    color: white;
+    font-weight: 600;
+    text-decoration: none;
+    text-align: center;
+    padding: 8px 16px;
+    background-color: #279f7c;
+    border-radius: 5px;
+    display: inline-block;
+    transition: all 0.5s ease-out;
+}
+.mainBlogContent .mainBlogContentBox .blogLink:hover {
+    background-color: rgba(122, 122, 122, 0.4);
+}
+.ourLocation {
+    color: #5f5f5f;
+    font-size: 18px;
+    font-weight: lighter;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+.content {
+    display: flex;
+    justify-content: space-between;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    margin: 100px 0;
+    background-color: #f4f4f4;
+}
+.content .contentBox {
+    width: 50%;
+}
+.content .contentBox h5 {
+    font-size: 1.7em;
+    color: #5f5f5f;
+    margin-bottom: 0.5em;
+}
+.content .contentBox p {
+    color: #8e8e8e;
+    width: 620px;
+    line-height: 160%;
+}
+.content .contentBox p a {
+    color: #333;
+}
+.content .contentBox h5 {
+    color: #5f5f5f;
+    font-size: 1.7em;
+}
+.content .contentBox form input {
+    display: block;
+    width: 100%;
+    height: 50px;
+    border-radius: 2px;
+    border: none;
+    margin: 20px 0;
+}
+.content .contentBox form input::placeholder {
+    padding-left: 20px;
+    font-size: 16px;
+}
+.content .contentBox form input[type="submit"] {
+    background-color: #1f6551;
+    color: white;
+    font-size: 18px;
+}
+.content .contentBox form textarea {
+    display: block;
+    width: 100%;
+    height: 150px;
+    border-radius: 2px;
+    border: none;
+    margin: 20px 0;
+}
+.content .contentBox form textarea::placeholder {
+    padding-left: 20px;
+    padding-top: 10px;
+    font-size: 16px;
+}
